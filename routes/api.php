@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OcrController;
+use App\Http\Controllers\CertificateOcrController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,7 @@ Route::get('/ping', function () {
 
 // endpoint untuk menerima hasil OCR + parsing
 Route::post('/ocr/parsing-result', [OcrController::class, 'store']);
+// Certificate OCR Routes
+Route::post('/certificate-ocr/upload', [CertificateOcrController::class, 'upload']);
+Route::post('/certificate-ocr/save-result', [CertificateOcrController::class, 'saveOcrResult']);
+
